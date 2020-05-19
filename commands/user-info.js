@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'user-info',
-	description: 'Zeige Informationen über einen Nutzer an.',
+	description: 'Erwähne einen Nutzer um Informationen über ihn zu erhalten.',
 	guildOnly: true,
 	execute(message) {
 		if (!message.mentions.users.size) {
