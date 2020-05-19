@@ -15,9 +15,9 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
-
-	client.user.setActivity("MINECRAFT")
-	client.user.setStatus("idle")
+client.on("ready", () => {
+	client.user.setActivity(`HALLo`);
+  });
 
 
 client.on('message', message => {
