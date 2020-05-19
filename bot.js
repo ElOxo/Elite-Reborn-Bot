@@ -31,14 +31,14 @@ client.on('message', message => {
 	if (!command) return;
 
 	if (command.guildOnly && message.channel.type !== 'text') {
-		return message.reply('I can\'t execute that command inside DMs!');
+		return message.reply('Den Befehl kann ich nicht in DMs ausführen!');
 	}
 
 	if (command.args && !args.length) {
-		let reply = `You didn't provide any arguments, ${message.author}!`;
+		let reply = `Bitte gib Argumente für den Befehl an, ${message.author}!`;
 
 		if (command.usage) {
-			reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+			reply += `\nSo kannst du den Befehl nutzen: \`${prefix}${command.name} ${command.usage}\``;
 		}
 
 		return message.channel.send(reply);
@@ -57,7 +57,7 @@ client.on('message', message => {
 
 		if (now < expirationTime) {
 			const timeLeft = (expirationTime - now) / 1000;
-			return message.reply(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
+			return message.reply(`Bitte warte ${timeLeft.toFixed(1)} Sekunden, bevor du den \`${command.name}\` Befehl nocheinmal benutzt.`);
 		}
 	}
 
@@ -68,7 +68,7 @@ client.on('message', message => {
 		command.execute(message, args);
 	} catch (error) {
 		console.error(error);
-		message.reply('there was an error trying to execute that command!');
+		message.reply('Fehler beim Versuch den Befehl auszuführen!');
 	}
 });
 
