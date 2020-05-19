@@ -15,23 +15,9 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
-var activity = new Discord.Activity{
-  State = "In Play Mode",
-  Details = "Playing the Trumpet!",
-  Instance = true,
-};
-
-activityManager.UpdateActivity(activity, (result) =>
-{
-    if (result == Discord.Result.Ok)
-    {
-        Console.WriteLine("Success!");
-    }
-    else
-    {
-        Console.WriteLine("Failed");
-    }
-});
+client.on("ready", () => {
+    client.user.setActivity("my code", { type: "PLAYING"})
+})
 		
 
 client.on('message', message => {
