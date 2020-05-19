@@ -15,10 +15,9 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
-client.on('ready', () => {
-	console.log('Ready!');
-	client.user.setPresence({ game:{ name: 'Ich sehe ALLES!' } , status: 'online'});
-});
+Client.on('ready', async () => {
+	await client.user.setPresence({ game: { name: 'Ich sehe ALLES' }, status: 'online' });
+ });
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
