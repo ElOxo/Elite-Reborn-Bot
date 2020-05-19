@@ -15,10 +15,10 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
-client.user.setActivity("with depression", {
-	type: "STREAMING",
-	url: "https://www.twitch.tv/monstercat"
-  });
+client.on('ready', () => {
+	console.log('Ready!');
+	client.user.setPresence({ game:{ name: 'Ich sehe ALLES!' } , status: 'online'});
+});
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
