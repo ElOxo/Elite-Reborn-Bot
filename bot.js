@@ -1,4 +1,5 @@
 const fs = require('fs');
+const util = require('util');
 const Discord = require('discord.js');
 const { prefix} = require('./config.json');
 
@@ -20,7 +21,8 @@ client.once('ready', () => {
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
-
+	if (!message.channel.permissionsFor(client.user).has('SEND_MESSAGES')) return;
+	
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const commandName = args.shift().toLowerCase();
 
