@@ -15,6 +15,15 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
+client.on('ready', ()=>{
+	client.user.setPresence({
+		game:{
+			name: 'reborn!help',
+			type: 0
+		}
+	})
+});
+
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	
