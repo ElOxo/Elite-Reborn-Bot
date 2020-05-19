@@ -15,9 +15,9 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
-client.on("ready", () => {
-    client.user.setActivity("my code", { type: "PLAYING"})
-})
+client.user.setActivity('discord.js', { type: 'WATCHING' })
+  .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+  .catch(console.error);
 		
 
 client.on('message', message => {
