@@ -16,10 +16,6 @@ for (const file of commandFiles) {
 const cooldowns = new Discord.Collection();
 
 client.user.setActivity('discord.js', { type: 'WATCHING' })
-  .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
-  .catch(console.error)
-		
-
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	
