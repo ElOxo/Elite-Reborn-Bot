@@ -6,7 +6,7 @@ module.exports = {
 	
 		if (message.member.roles.has('697424990592696350')) {
 			if(args[0]=='all'){
-				if (message.member.roles.has('697559808424804395' || message.member.roles.has('696828765996580984'))) {
+				if (message.member.roles.has('697559808424804395') || message.member.roles.has('696828765996580984')) {
 					message.channel.send("delete all")
 				}else{
 					message.channel.send("Nur Owner können das!!!")
