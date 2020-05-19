@@ -15,7 +15,7 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
-Client.on('ready', async () => {
+client.on('ready', async () => {
 	await client.user.setPresence({ game: { name: 'Ich sehe ALLES' }, status: 'online' });
  });
 
