@@ -15,9 +15,14 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
-client.on('ready', () => {
-	client.user.setPresence({ game: { name: 'ICH SEHE ALLES' }, status: 'online' })
-	console.log(`${client.user.username} läuft!`);
+client.on("ready", () => {
+    client.user.setPresence({
+        game: { 
+            name: 'my code',
+            type: 'WATCHING'
+        },
+        status: 'idle'
+    })
 })
 		
 
