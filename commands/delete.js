@@ -7,19 +7,19 @@ module.exports = {
 		if (message.member.roles.has('697424990592696350')) {
 			if(args[0]=='all'){
 				if (message.member.roles.has('697559808424804395') || message.member.roles.has('696828765996580984')) {
-					message.channel.send("delete all")
+					async () => {
+						let fetched;
+						do {
+						  fetched = await channel.fetchMessages({limit: 100});
+						  message.channel.bulkDelete(fetched);
+						}
+						while(fetched.size >= 2);
+					  } 
 				}else{
 					message.channel.send("Nur Owner können das!!!")
 				}
 				
-				/* async () => {
-					let fetched;
-					do {
-					  fetched = await channel.fetchMessages({limit: 100});
-					  message.channel.bulkDelete(fetched);
-					}
-					while(fetched.size >= 2);
-				  } */
+				
 			}
 			else{
 				const amount = parseInt(args[0]) + 1;
