@@ -16,5 +16,8 @@ module.exports = {
 				message.channel.send('there was an error trying to prune messages in this channel!');
 			});
 		}
+		else{
+			message.channel.send('u don\'t have the permission to do that!!!');
+		}
 	},
 };
