@@ -25,7 +25,7 @@ client.on("ready", () => {
     if(message.content.indexOf(prefix) !== 0) return;
     
     // Here we separate our "command" name, and our "arguments" for the command. 
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     
     // Let's go with a few common example commands! Feel free to delete or change those.
