@@ -15,7 +15,10 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
-client.user.setActivity('discord.js', { type: 'WATCHING' })
+client.on("ready", () => {
+    client.user.setActivity("MINECRAFT", { type: "Playing"})
+})
+
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	
