@@ -13,12 +13,11 @@ client.on('message', (receivedMessage) => {
 })
 
 function processCommand(receivedMessage) {
-    let fullCommand = receivedMessage.content.substr(prefix.length) // Remove the leading exclamation mark
-    let splitCommand = fullCommand.split(" ") // Split the message up in to pieces for each space
-    let primaryCommand = splitCommand[0] // The first word directly after the exclamation is the command
-    let arguments = splitCommand.slice(1) // All other words are arguments/parameters/options for the command
+   
+    const args = receivedMessage.content.slice(prefix.length).split(' ');
+    const command = args.shift().toLowerCase();
 
-    switch (primaryCommand){
+    switch (command){
         case "help":
             helpCommand(receivedMessage);
             break;
