@@ -15,9 +15,23 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
-client.on("ready", () => {
-    client.user.setActivity('MINECRAFT', { type: 'PLAYING' });
-})
+var activity = new Discord.Activity{
+  State = "In Play Mode",
+  Details = "Playing the Trumpet!",
+  Instance = true,
+};
+
+activityManager.UpdateActivity(activity, (result) =>
+{
+    if (result == Discord.Result.Ok)
+    {
+        Console.WriteLine("Success!");
+    }
+    else
+    {
+        Console.WriteLine("Failed");
+    }
+});
 		
 
 client.on('message', message => {
