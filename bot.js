@@ -11,7 +11,7 @@ client.on("ready", () => {
   });
   
   
-  
+   
   
   client.on("message", async message => {
     // This event will run on every single message received, from any channel or DM.
