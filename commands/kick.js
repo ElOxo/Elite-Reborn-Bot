@@ -1,17 +1,17 @@
 module.exports = {
 	name: 'kick',
-	description: 'Tag a member and kick them (but not really).',
+	description: 'Erwähne einen Nutzer und Kicke ihn (but not really).',
 	guildOnly: true,
 	execute(message) {
 		if (!message.mentions.users.size) {
-			return message.reply('you need to tag a user in order to kick them!');
+			return message.reply('Du musst einen Nutzer erwähnen um ihn zu kicken!');
 		}
 		const taggedUser = message.mentions.users.first();
 		if (message.member.roles.has('697559808424804395') || message.member.roles.has('696828765996580984')) {
-			message.channel.send(`You wanted to kick: ${taggedUser.username}`);
+			message.channel.send(`Möchtest du den Nutzer kicken: ${taggedUser.username}`);
 		}
 		else{
-			message.channel.send('Only Owner and Devs can use that!');
+			message.channel.send('Nur Nutzer mit der Rolle Owner und Dev können diesen Befehl nutzen!');
 		}
 	},
 };
