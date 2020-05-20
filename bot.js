@@ -2,6 +2,7 @@ const fs = require('fs');
 const util = require('util');
 const Discord = require('discord.js');
 const { prefix} = require('./config.json');
+const { RichEmbed }= require('discord.js');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -76,7 +77,6 @@ client.on('message', message => {
 		message.reply('Fehler beim Versuch den Befehl auszuführen!');
 	}
 });
-
 
  
 

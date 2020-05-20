@@ -3,7 +3,6 @@ module.exports = {
 	description: 'Lösche bis zu 99 Nachrichten.',
 	guildOnly: true,
 	execute(message, args) {
-
 		if (message.member.roles.has('697424990592696350')) {
 			const amount = parseInt(args[0]) + 1;
 			if (isNaN(amount)) {
