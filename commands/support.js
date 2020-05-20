@@ -6,8 +6,7 @@ module.exports = {
         // Wenn Support und Team Rang
         if (message.channel.id == "696821086846844969" && message.member.roles.has('697424990592696350')) {
 
-            message.channel.send("yeee");
-           /*  const exampleEmbed = {
+            const exampleEmbed = {
                 color: 0x0099ff,
                 title: 'Elite-Reborn Support',
                 description: 'Reagiere mit 📩 um deinen persönlichen Support Channel zu erstellen.',
@@ -43,7 +42,7 @@ module.exports = {
                 .catch(collected => {
                     message.send("NEEEE")
                 });
-              */   
+
         }
     },
 };
