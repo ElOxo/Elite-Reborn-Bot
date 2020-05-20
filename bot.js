@@ -83,11 +83,11 @@ client.on('messageReactionAdd', (reaction, user) => {
 	//Wenn SupportChannel
 	if (message.channel.id == "696821086846844969"){
 		if (emoji.name == '📩') {
-			message.channel.send("DU HAST REAGIERT")		
+			reaction.remove(user);	
+			//CREATE CHANNEL
 		}
 		else {
 			reaction.remove(user);
-			message.channel.send("HEUTE NICHT")
 		}
 	}
 });
