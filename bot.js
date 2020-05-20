@@ -17,7 +17,6 @@ for (const file of commandFiles) {
 const cooldowns = new Discord.Collection();
 
 client.on('ready', ()=>{
-	client.guilds.get('guild_id').channels.get('channel_id').fetchMessage('message_id');
 	client.user.setPresence({
 		game:{
 			name: 'reborn!help',
