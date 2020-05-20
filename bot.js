@@ -1,8 +1,8 @@
 const fs = require('fs');
 const util = require('util');
 const Discord = require('discord.js');
-const { prefix} = require('./config.json');
-const { RichEmbed }= require('discord.js');
+const { prefix } = require('./config.json');
+const { RichEmbed } = require('discord.js');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -16,9 +16,9 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
-client.on('ready', ()=>{
+client.on('ready', () => {
 	client.user.setPresence({
-		game:{
+		game: {
 			name: 'reborn!help',
 			type: 0
 		}
@@ -27,7 +27,7 @@ client.on('ready', ()=>{
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
-	
+
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const commandName = args.shift().toLowerCase();
 
@@ -81,13 +81,32 @@ client.on('message', message => {
 client.on('messageReactionAdd', (reaction, user) => {
 	let message = reaction.message, emoji = reaction.emoji;
 	//Wenn SupportChannel
-	if (message.channel.id == "696821086846844969"){
+	if (message.channel.id == "696821086846844969") {
 		if (emoji.name == '📩') {
-			if(user.id!=='712200237690650644'){
-				reaction.remove(user);	
+			if (user.id !== '712200237690650644') {
+				reaction.remove(user);
 				//CREATE CHANNEL
+				message.guild.createChannel('support_'+Date.now().toString(), {
+					type: 'text',
+					permissionOverwrites: [
+						{
+							id: message.guild.id,
+							deny: ['VIEW_CHANNEL'],
+						},
+						{
+							id: user.id,
+							allow: ['VIEW_CHANNEL'],
+						},
+						{
+							id:'697424990592696350',
+							allow: ['VIEW_CHANNEL']
+						}						
+					],
+				})
+					.then(console.log)
+					.catch(console.error);
 			}
-	
+
 		}
 		else {
 			reaction.remove(user);
@@ -95,7 +114,7 @@ client.on('messageReactionAdd', (reaction, user) => {
 	}
 });
 
- 
+
 
 // THIS  MUST  BE  THIS  WAY
 
