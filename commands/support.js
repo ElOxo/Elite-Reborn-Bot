@@ -19,9 +19,6 @@ module.exports = {
                         value: 'ICH BANN EUCH WEG',
                     }
                 ],
-                /*   image: {
-                      url: 'https://cdn.discordapp.com/avatars/712200237690650644/1d8ffdac4456cf8388d7b4941afb3661.png?size=2048',
-                  }, */
                 timestamp: new Date(),
             };
 
