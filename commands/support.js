@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'startSupport',
+    name: 'support',
     description: 'Sende deine Bewerbung ',
     guildOnly: true,
     execute(message) {
