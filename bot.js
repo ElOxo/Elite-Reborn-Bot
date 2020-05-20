@@ -83,8 +83,11 @@ client.on('messageReactionAdd', (reaction, user) => {
 	//Wenn SupportChannel
 	if (message.channel.id == "696821086846844969"){
 		if (emoji.name == '📩') {
-			reaction.remove(user);	
-			//CREATE CHANNEL
+			if(user.id!=='712200237690650644'){
+				reaction.remove(user);	
+				//CREATE CHANNEL
+			}
+	
 		}
 		else {
 			reaction.remove(user);
