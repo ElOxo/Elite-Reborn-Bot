@@ -88,6 +88,7 @@ client.on('messageReactionAdd', (reaction, user) => {
 				//CREATE CHANNEL
 				message.guild.createChannel('support_', {
 					type: 'text',
+					parent:'696813844994981900',
 					permissionOverwrites: [
 						{
 							id: message.guild.id,
