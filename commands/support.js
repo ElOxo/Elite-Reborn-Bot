@@ -19,20 +19,19 @@ module.exports = {
                         value: 'ICH BANN EUCH WEG',
                     }
                 ],
-                image: {
+              /*   image: {
                     url: 'https://cdn.discordapp.com/avatars/712200237690650644/1d8ffdac4456cf8388d7b4941afb3661.png?size=2048',
-                },
+                }, */
                 timestamp: new Date(),
             };
 
             message.channel.send({ embed: exampleEmbed }).then(embedMessage => {
                 embedMessage.react("📩");
-            });
+                const filter = (reaction) => {
+                    return reaction.emoji.name;
+                };
 
-            const filter = (reaction) => {
-                return reaction.emoji.name;
-            };
-            message.awaitReactions(filter)
+                embedMessage.awaitReactions(filter)
                 .then(collected => {
                     const reaction = collected.first();
                     if (reaction.emoji.name === '📩') {
@@ -42,6 +41,10 @@ module.exports = {
                 .catch(collected => {
                     message.send("NEEEE")
                 });
+            });
+
+         
+            
 
         }
     },
