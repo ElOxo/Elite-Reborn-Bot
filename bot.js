@@ -86,7 +86,7 @@ client.on('messageReactionAdd', (reaction, user) => {
 			if (user.id !== '712200237690650644') {
 				reaction.remove(user);
 				//CREATE CHANNEL
-				message.guild.createChannel('support_'+Date.now().toString(), {
+				message.guild.createChannel('support_', {
 					type: 'text',
 					permissionOverwrites: [
 						{
@@ -100,10 +100,9 @@ client.on('messageReactionAdd', (reaction, user) => {
 						{
 							id:'697424990592696350',
 							allow: ['VIEW_CHANNEL']
-						}						
+						},						
 					],
 				})
-					.then(console.log)
 					.catch(console.error);
 			}
 
