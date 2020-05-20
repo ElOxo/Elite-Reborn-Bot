@@ -4,7 +4,7 @@ module.exports = {
     guildOnly: true,
     execute(message) {
         // Wenn Support und Team Rang
-        if (message.channel.id == 696821086846844969 && message.member.roles.has('697424990592696350')) {
+        if (message.channel.id == "696821086846844969" && message.member.roles.has('697424990592696350')) {
 
             message.channel.send("yeee");
            /*  const exampleEmbed = {
