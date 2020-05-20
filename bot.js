@@ -17,6 +17,7 @@ for (const file of commandFiles) {
 const cooldowns = new Discord.Collection();
 
 client.on('ready', ()=>{
+	client.guilds.get('guild_id').channels.get('channel_id').fetchMessage('message_id');
 	client.user.setPresence({
 		game:{
 			name: 'reborn!help',
@@ -75,6 +76,20 @@ client.on('message', message => {
 	} catch (error) {
 		console.error(error);
 		message.reply('Fehler beim Versuch den Befehl auszuführen!');
+	}
+});
+
+client.on('messageReactionAdd', (reaction, user) => {
+	let message = reaction.message, emoji = reaction.emoji;
+	//Wenn SupportChannel
+	if (message.channel.id == "696821086846844969"){
+		if (emoji.name == '📩') {
+			message.channel.send("DU HAST REAGIERT")		
+		}
+		else {
+			reaction.remove(user);
+			message.channel.send("HEUTE NICHT")
+		}
 	}
 });
 
