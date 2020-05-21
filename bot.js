@@ -104,7 +104,9 @@ client.on('messageReactionAdd', (reaction, user) => {
 						},						
 					],
 				})
-				.catch(message.channel.send("fehler"));
+				.catch(err => {
+					message.channel.send("fehler:"+err)
+				});
 			}
 
 		}
