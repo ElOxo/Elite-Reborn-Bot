@@ -86,23 +86,23 @@ client.on('messageReactionAdd', (reaction, user) => {
 			if (user.id !== '712200237690650644') {
 				reaction.remove(user);
 				//CREATE CHANNEL
-				message.guild.createChannel('support2', {
-					type: 'text',
-					parent:'696813844994981900',
-					permissionOverwrites: [
-						{
-							id: message.guild.id,
-							deny: ['VIEW_CHANNEL'],
-						},
-						{
-							id: user.id,
-							allow: ['VIEW_CHANNEL'],
-						},
-						{
-							id:'697424990592696350',
-							allow: ['VIEW_CHANNEL']
-						},						
-					],
+				message.guild.createChannel('support2','text')
+				.then(newchannel => {
+					newchannel.overwritePermissions(
+						newchannel.guild.id, {
+							READ_MESSAGES: false
+						   }
+					)
+					newchannel.overwritePermissions(
+						user.id, {
+							READ_MESSAGES: true
+						   }
+					)
+					newchannel.overwritePermissions(
+						697424990592696350, {
+							READ_MESSAGES: true
+						   }
+					)
 				})
 				.catch(err => {
 					message.channel.send("fehler:"+err)
