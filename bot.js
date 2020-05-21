@@ -19,7 +19,7 @@ const cooldowns = new Discord.Collection();
 client.on('ready', () => {
 	client.user.setPresence({
 		game: {
-			name: 'reborn!help',
+			name: 'elite!help',
 			type: 0
 		}
 	})
@@ -86,7 +86,7 @@ client.on('messageReactionAdd', (reaction, user) => {
 			if (user.id !== '712200237690650644') {
 				reaction.remove(user);
 				//CREATE CHANNEL
-				message.guild.createChannel('support_', {
+				message.guild.createChannel('support2', {
 					type: 'text',
 					parent:'696813844994981900',
 					permissionOverwrites: [
