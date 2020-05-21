@@ -99,7 +99,7 @@ client.on('messageReactionAdd', (reaction, user) => {
 						   }
 					)
 					newchannel.overwritePermissions(
-						697424990592696350, {
+						'697424990592696350', {
 							READ_MESSAGES: true
 						   }
 					)
