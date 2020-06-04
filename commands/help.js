@@ -11,6 +11,7 @@ module.exports = {
 		const { commands } = message.client;
 		if (message.channel.id == 696823527214415992 || message.channel.id == 704840502813524008 || message.channel.id == 712209760178405376 || message.channel.type === 'dm') {
 			if (!args.length) {
+				data.push('Bitte beachte, dass manche Befehle nur von Bestimmten Mitgliedern ausgeführt werden können. \n');
 				data.push('Hier ist eine Liste mit allen Befehlen:');
 				data.push(commands.map(command => command.name).join(', '));
 				data.push(`\nSende \`${prefix}help [Befehl name]\` um erweiterte Informationen zum Befehl zu erhalten!`);
